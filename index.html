@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<div class="app" id="app">
+	{{ message }}<br>
+
+	<router-link to="/">Home</router-link>
+	<router-link to="/someroute/1">Link One</router-link>
+	<router-link to="/someroute/2">Link Two</router-link>
+
+	<router-view class="view"></router-view>
+</div>
+
+
+<template id="mytemplate">
+	<div>
+		<div>Selected id: {{ $route.params.id }}</div>
+		<div v-for="tag in tags">
+			{{tag}}
+		</div>
+	</div>
+</template>
+
+<script src="bower_components/vue/dist/vue.js"></script>
+<script src="bower_components/vue-router/dist/vue-router.js"></script>
+<script src="bower_components/axios/dist/axios.js"></script>
+<script src="custom.js"></script>
+</body>
+</html>
